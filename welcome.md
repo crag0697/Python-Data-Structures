@@ -2,7 +2,7 @@
 
 Welcome to Python Data Structures.  Understanding different kinds of data structures is essential when programming with Python:
 
-- Stacks
+- [Stacks[(Stacks.md)
 - Sets
 - Binary Trees
 
