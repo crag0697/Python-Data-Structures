@@ -143,12 +143,11 @@ edit the string. This can be done through a boolean flag to check if the user pr
 Write a program that takes alist of integers and checks if it is the same when reversed. You must use stacks to accomplish this program. The program should return True or False based on the result. The program must be able to handle both strings and lists. (Hint: you do not need to make a class to make or modify the class for this problem)
 
 Execute the following test cases:
-Test 1: check_reverse("rotator") # True
+check_reverse([18, 15, 20, 1, 20, 15, 18])  # Test 1: True
+check_reverse([5, 7, 9, 2, 8, 6, 4, 1, 3, 3, 1, 4, 6, 8, 2, 9, 7, 5])  # Test 2: True
+check_reverse([42, 17, 36, 42, 16, 42])  # Test 3: False
+check_reverse([])  # Test 4: True
 
-Test 2: check_reverse("was it a car or a cat I saw") # True
-
-Test 3: check_reverse({"apple", "banana", "grapes", "tomatoes", "grapes", "banana", "apple") # True
-
-When finished, check your code compared to the solution: [Solution]()
+When finished, check your code compared to the solution: [Solution](stacksolution.py)
 
 [Return to Welcome Page](welcome.md)
