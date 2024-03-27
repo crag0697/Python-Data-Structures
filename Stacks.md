@@ -58,4 +58,97 @@ We've already explored push and pop operations a little so far. All operations t
 
 ## The Function Stack
 
-To this point, we have actually been utilizing stacks in every program we have written anytime we call a function. The function call essentially tells the computer we want to: call x function, and where to return to when done. Calling the function is easy to visualize when we initiate a function call. But what about when the function needs to call a series of other functions to finish? This is done by creating what's called a call stack. 
+To this point, we have actually been utilizing stacks in every program we have written anytime we call a function. The function call essentially tells the computer we want to: call x function, and where to return to when done. Calling the function is easy to visualize when we initiate a function call. But what about when the function needs to call a series of other functions to finish? This is done by creating what's called a call stack. When a function is called, it is pushed to the back of the stack. Each successive function call is pushed to the stack until the last function is resolved. It is then removed from the stack and each previous function executes in its time and is removed until the stack is cleared. This is sometimes referred to as unwinding the call stack.
+
+![Stacking Plates LIFO](function_stack.jpeg)
+
+### Recursion
+
+While another topic, call stacks are an essential element of using recursion in programming. Recursion is the process of a function iteratively calling itself until a desired end case is reached. Each call to itself is added to the call stack. Once the end case is reached, each occurence of the call is resolved as the stack unwinds. This can appear as if the function is holding on to each iteration of return values until resolving them all once the end condition is met. 
+
+# Example Problem - Text Editor
+
+Let's return to the text editor example from earlier. We can write a simple program illustrating the process of a stack by having a user enter a string and execute an undo function if they want to edit something they previously wrote. 
+
+Requirements:
+
+- Create a class to initialize the stack and manage adding or removing items
+- Get user input in the form of a string
+- Push the words of the string into the stack and display the current string
+- Ask if the user wants to undo something and remove the last element of the stack if requested
+
+```python
+class Stack:
+    """
+    Implement the Stack data structure. The functions below
+    will encompas the initialization of the stack and functions for 
+    adding or removing from the sentence stack. 
+    """
+
+    def __init__(self):
+        '''
+        Initialize the data structure as an empty list
+        '''
+        self.word_stack = []
+
+    '''
+    Add a word to the back of the stack
+    '''
+    def add_word(self, word):
+        self.word_stack.append(word)
+
+    '''
+    Remove the last word entered from the stack. If the stack is empty,
+    display a message to the user.
+    '''
+    def undo(self):
+        if self.word_stack:
+            self.word_stack.pop()
+        else:
+            print("Nothing to undo.")
+
+def main():
+    print("Welcome to the text editor.")
+    editor = Stack()   # Create a new instance of the stack class to hold the user input
+
+    while True:   # Set the program to constantly read user input and add it to the stack
+        user_input = input("Enter a word (press Enter to finish, 'undo' to undo): ")
+
+        if not user_input:   # If the player presses Enter with no other input, end the loop
+            break
+
+        elif user_input.lower() == 'undo':   # Remove the last entered word from the sentence
+            editor.undo()
+
+        else:
+            words = user_input.split()   # Break up the string into a list of each word separated by blank space
+
+            for word in words:   # For each word in the list, add it to the editor stack and display the current sentence when finished
+                editor.add_word(word)
+            print("Current sentence:", ' '.join(editor.word_stack))
+
+    print("Final sentence:", ' '.join(editor.word_stack))   # When the user has finished, display the final sentence
+
+'''
+Execute the main function
+'''
+main()
+```
+
+This example takes input from the user storing it when they indicate the input is done allowing for further edits until they are finished. Notice the while loop is always set to True to allow the user to continuously 
+edit the string. This can be done through a boolean flag to check if the user pressed enter or didn't enter any input and would generally be preferred over using the break keyword.
+
+# Problem - Inversion Check
+
+Write a program that takes alist of integers and checks if it is the same when reversed. You must use stacks to accomplish this program. The program should return True or False based on the result. The program must be able to handle both strings and lists. (Hint: you do not need to make a class to make or modify the class for this problem)
+
+Execute the following test cases:
+Test 1: check_reverse("rotator") # True
+
+Test 2: check_reverse("was it a car or a cat I saw") # True
+
+Test 3: check_reverse({"apple", "banana", "grapes", "tomatoes", "grapes", "banana", "apple") # True
+
+When finished, check your code compared to the solution: [Solution]()
+
+[Return to Welcome Page](welcome.md)
