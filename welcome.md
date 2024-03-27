@@ -5,6 +5,7 @@ Welcome to Python Data Structures.  Understanding different kinds of data struct
 - Stacks
 - Sets
 - Binary Trees
+
 Each module will cover all aspects of the data structure.  At the end of each module, there will be an example problem followed by a problem for you to try.  Avoid lookign at the solution until you have attempted the problem yourself.
 
 ## Contact
