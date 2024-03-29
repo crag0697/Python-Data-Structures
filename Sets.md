@@ -155,4 +155,16 @@ mixed = [42, "hello", True, "world", False, 0, 10, "python", True]   # Answer: {
 ```
 Notice on Test 3 that 0 did not get added to the new set. This is because Python treats 0 and False as the same and 1 and True as the same meaning that there can only be one when adding to a set.
 
-# Problem - 
+# Problem - Word Composition
+
+Write a program that take a list of strings and returns a set of only the words that are made of unique letters meaning the word has no duplicate letters in it. The program should display the original words and the words that are unique unless none of the words are composed of unique letters.
+
+Execute the following test cases:
+
+- words = ["apple", "banana", "orange", "grape", "kiwi", "watermelon", "peach", "pear", "plum", "strawberry", "pineapple"]
+- words = ["Life is beautiful.", "Coding is fun!", "Stay positive.", "Dream big.", "Never give up."]
+- words = ["banana", "hello", "coffee", "success", "butter", "pizza", "apples"]
+
+When finished, check your code compared to the solution: [Solution](setssolution.py)
+
+[Return to Welcome Page](welcome.md)
