@@ -4,7 +4,7 @@ Welcome to Python Data Structures.  Understanding different kinds of data struct
 
 - [Stacks](Stacks.md)
 - [Sets](Sets.md)
-- [Binary Trees](Binary Trees.md)
+- [Trees](Trees.md)
 
 Each module will cover all aspects of the data structure.  At the end of each module, there will be an example problem followed by a problem for you to try.  Avoid lookign at the solution until you have attempted the problem yourself.
 
